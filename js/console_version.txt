@@ -1,0 +1,91 @@
+function game() {
+
+    // number of rounds
+        let myWin = 0;
+        let compWin = 0;
+        for (let i = 0; i <= 5; i++) {
+        // generating computer choice
+        let computerChoice = ['rock', 'paper', 'scissors'];
+        let numberGenerated = Math.floor(Math.random() * 3);
+        computerChoice = computerChoice[numberGenerated];
+        console.log(computerChoice);
+
+        // user choice
+        let userChoice = prompt('Choose rock,paper or scissors');
+        userChoice = userChoice.toLowerCase();
+        console.log(userChoice);
+        
+        //comparing matches
+        
+        if (userChoice == computerChoice) {
+            console.log('It is a tie');
+           
+        } 
+    
+        if (userChoice == 'rock') {
+            if (computerChoice == 'scissors') {
+                console.log('Rock beats paper');
+                myWin++;
+               
+            } else if (computerChoice == 'paper') {
+                console.log('Paper beats rock');
+                compWin++;
+                
+            }
+        }
+        if (userChoice == 'paper') {
+            if (computerChoice == 'rock') {
+                console.log('Paper beats rock');
+                myWin++;
+               
+            }else if (computerChoice == 'scissors') {
+                console.log('Scissors beats paper');
+                compWin++;
+               
+            }
+        }
+        if (userChoice == 'scissors') {
+            if (computerChoice == 'paper') {
+                console.log('Scissors beat paper');
+                myWin++;
+               
+            }else if (computerChoice == 'rock') {
+                console.log('Rock beats scissors');
+                compWin++;
+            }
+        }
+        console.log(`Ur score: ${myWin}`);
+        console.log(`Comp score: ${compWin}`);
+    }
+    console.log('Game Over');    
+
+    
+}
+
+
+_______________________________________________________________________
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>GEMU DES</title>
+</head>
+<body>
+    <h1>Let's play a game</h1>
+    <button onclick="game()">Game</button>
+    <div class='player_choices'>
+        <button class="rock">Rock</button>
+        <button class="paper">Paper</button>
+        <button class="scissors">Scissors</button>
+        </div>
+    <div class='text_score'>
+        <p>Your points:</p>
+        <p>Comp points:</p>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
+
